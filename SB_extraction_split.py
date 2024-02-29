@@ -127,8 +127,6 @@ class FileOps:
         except Exception as error:
             return f'Could not open or create {self.inv_out}: {str(error)}'
 
-        #del customer_information
-
 
     def get_inv_it_info(self, invoice_codes, encoding='UTF-8'):
 
