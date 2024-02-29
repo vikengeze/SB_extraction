@@ -123,7 +123,7 @@ class FileOps:
             with open(self.inv_out, mode, encoding=encoding) as file:
                 file.write(f"{','.join(invoice_headers)}\n") #write the headers separated by commas
                 for key in invoice_information:
-                    file.write(f"{key},{','.join(invoice_information[key])}\n") #write every value in the dictionary separated by commas
+                    file.write(f"{invoice_information[key][0]},{key},{','.join(invoice_information[key][1:3])}\n") #write every value in the dictionary separated by commas
         except Exception as error:
             return f'Could not open or create {self.inv_out}: {str(error)}'
 
